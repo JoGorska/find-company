@@ -1,6 +1,8 @@
+#pylint: disable=W0223
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+from find_company.items import Company
 
 
 class CylexSpider(CrawlSpider):
@@ -16,8 +18,10 @@ class CylexSpider(CrawlSpider):
     ]
 
     def parse_info(self, response):
+        '''
+        gets company name from the meta tag with property og:title
+        '''
         company = Company()
         company['name'] = response.xpath('//meta[@property="og:title"/@content').get()
-        company['url'] = response.url
 
         return company
