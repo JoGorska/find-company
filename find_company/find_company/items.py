@@ -11,4 +11,4 @@ class Company(scrapy.Item):
     class company creates scrapy field for company name
     '''
     name = scrapy.Field()
-
+    url = scrapy.Field()

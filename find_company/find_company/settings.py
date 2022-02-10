@@ -9,12 +9,25 @@
 
 BOT_NAME = 'find_company'
 
+CLOSESPIDER_PAGECOUNT = 10
+
+# FEED_URI = 'articles.json'
+# FEED_FORMAT = 'json'
+
+FEED_URI = 'articles.csv'
+FEED_FORMAT = 'csv'
+
 SPIDER_MODULES = ['find_company.spiders']
 NEWSPIDER_MODULE = 'find_company.spiders'
-
-
+# headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'}
+# headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Mobile Safari/537.36'}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'find_company (+http://www.yourdomain.com)'
+USER_AGENT = 'find_company (+http://www.yourdomain.com)'
+# USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'
+USER_AGENT = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Mobile Safari/537.36'
+
+CONCURRENT_REQUESTS = 1
+DOWNLOAD_DELAY = 5
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
