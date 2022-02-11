@@ -21,8 +21,8 @@ class CylexSpider(scrapy.Spider):
 
     # response = requests.get('https://corby.cylex-uk.co.uk/company/alexs-15659626.html', headers=headers)
     
-    req = Request('https://corby.cylex-uk.co.uk/company/alexs-15659626.html', headers={'User-Agent': 'Mozilla/5.0'})
-    response = urlopen(req).read()
+    # req = Request('https://corby.cylex-uk.co.uk/company/alexs-15659626.html', headers={'User-Agent': 'Mozilla/5.0'})
+    # response = urlopen(req).read()
 
     def parse_info(self, response):
         '''
@@ -30,7 +30,7 @@ class CylexSpider(scrapy.Spider):
         '''
         company = Company()
         company['name'] = response.xpath('//meta[@property="og:title"/@content').get()
-        company['url'] = response.url
+        # company['url'] = response.url
         return company
 
 
@@ -43,7 +43,7 @@ class CylexSpider(scrapy.Spider):
 #     start_urls = ['https://belfast.cylex-uk.co.uk/company/sloan%27s-gym-26980970.html']
 
 #     rules = [
-#         Rule(LinkExtractor(allow=r'cylex-uk.co.uk/company/[a-zA-Z\-]+[0-9]+.html'), callback='parse_item', follow=True)
+#         Rule(LinkExtractor(allow=r'cylex-uk.co.uk/company\/[a-zA-Z\-]+\/[a-zA-Z\-]+[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.html'), callback='parse_item', follow=True)
 #     ]
 
 #     def parse_info(self, response):
