@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'find_company.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mediapartners-Google'
+USER_AGENT = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Mobile Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -44,9 +44,11 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'find_company.middlewares.FindCompanySpiderMiddleware': 543,
-#}
+# SPIDER_MIDDLEWARES = {
+#    'scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy': 543,
+# }
+# interesting???
+REFFERRER_POLICY = 'scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy'
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
