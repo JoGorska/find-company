@@ -18,16 +18,14 @@ class YellSpider(scrapy.Spider):
         item = FindCompanyItem()
         article_id_list = response.xpath('//article[@role="listitem"]/@id').extract()
 
-        # print(f'ARTICLE ID {article_id_list}')
-        items_list = []
-        i = 0
         for id in article_id_list:
             article_xpath = '//article[@id="'+ id +'"]'
             company_id =  id
             company_name = response.xpath(article_xpath).css('h2.businessCapsule--name::text').extract_first()
             company_website = response.xpath(article_xpath +'/div/div/div/div/a[text()[contains(., "Website")]]/@href').extract_first()
-            item['company_id'] = company_id
+
             item['company_name'] = company_name
             item['company_website'] = company_website
+            item['company_id'] = company_id
             yield item
 
