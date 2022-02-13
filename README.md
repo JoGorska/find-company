@@ -115,7 +115,11 @@ https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&ut
 #### robots.txt
 Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
 
-Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when I try to look up. 
+Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when I try to look up. The same error is being returned for the spider
+```
+2022-02-13 14:55:01 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://www.yell.com/sitemaps.xml> (failed 3 times): 503 Service Unavailable
+``` 
+
 
 ### Saving data
 

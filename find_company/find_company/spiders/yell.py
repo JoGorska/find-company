@@ -1,22 +1,25 @@
 #pylint: disable=W0223
 #pylint: disable=W0221
 import scrapy
-from scrapy.spiders import CrawlSpider, Rule, SitemapSpider
+from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
 
-class YellSpider(SitemapSpider):
+class YellSpider(CrawlSpider):
     '''
     spider to obtain company names of yell
     '''
     name = 'yell'
     allowed_domains = ['yell.com']
-    sitemap_urls = ['https://www.yell.com/sitemaps.xml']
-    # start_urls = ['https://www.yell.com/biz/automotive-solutions-corby-ltd-corby-9911336/']
 
-    # rules = [
-    #     Rule(LinkExtractor(allow=r'cylex-uk.co.uk/company\/[a-zA-Z\-]+\/[a-zA-Z\-]+[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+.html'), callback='parse_item', follow=True)
-    # ]
+    start_urls = ['https://www.yell.com/ucs/UcsSearchAction.do?scrambleSeed=1240993862&keywords=Garages&location=corby']
+
+    rules = [
+        # Rule(LinkExtractor(allow=r'.yell.com/biz\/[a-zA-Z\-]+\/[a-zA-Z\-]+[0-9][0-9][0-9][0-9][0-9][0-9][0-9]+\/'), callback='parse_item', follow=True)
+    
+        Rule(LinkExtractor(allow=r'biz/((?!:).)*$'), callback='parse_item', follow=True)
+    
+    ]
     def parse(self, response):
 
         company_name = response.xpath('//title/text()').extract_first()
