@@ -19,8 +19,8 @@ CLOSESPIDER_PAGECOUNT = 10
 # 'FEED_URI': 'companies.xml',
 # 'FEED_FORMAT': 'xml'
 
-FEED_URI  ='companies.csv'
-FEED_FORMAT ='csv'
+# FEED_URI  ='companies.csv'
+# FEED_FORMAT ='csv'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36'
@@ -73,9 +73,10 @@ REFFERRER_POLICY = 'scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'find_company.pipelines.FindCompanyPipeline': 300,
-#}
+# higher priority - lower number
+ITEM_PIPELINES = {
+   'find_company.pipelines.FindCompanyPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

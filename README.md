@@ -86,12 +86,27 @@ Below you will find an example of company that has profile on both trustpilot an
 - Corbytyre - Trustpilot link [here](https://uk.trustpilot.com/review/www.corbytyres.co.uk)
 
 #### Issues:
+
 - the names are different - "corby tyre and exhaust" on Yell, but "corbytyres" on trustpilot - this might be due this one being unclaimed profile at trustpilot
 - common ground: they both reffer to the same website of the company link [here](www.corbytyres.co.uk)
 - need to be aware that not all companies will have website on both sites
 - I tested that trustpilot allows to reaserch by company name OR partial of the website address. It is worth to harvest both data from Yell to get more hits in Trustpilot
+- sitemap returning 503 error(more details in [robots.txt](#robots.txt))
+- crawling spider can start on the page listing 29 companies and crawl into each company on the list, but doesn't return any data. Gives status 200 and list of each pages it crawled, but no data. Tried for loop through responses, but no result
+- company id for Yell seems to be usefull: two ways to obtain it from article:
+as id - this one contains 'ad_fle_' and also can contain long number if company aticle is given any additional advertising properties.
+
+```
+id="ad_FLE_8852306_-"
+```
+or cleaned as this below example, but xpath selector doesn't seem to want to take it
+
+```
+data-natId="8852306"
+```
 
 #### Source of data in Yell:
+
 - exact url where data is:
 ```
 https://www.yell.com/biz/corby-tyre-and-exhaust-corby-6915600/
@@ -112,24 +127,9 @@ link received by using css selector and xpath
 https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&utm_campaign=yell'
 ```
 
-#### Issues with obtaining data
-- sitemap returning 503 error(more details in [robots.txt](robots.txt))
-- crawling spider can start on the page listing 29 companies and crawl into each company on the list, but doesn't return any data. Gives status 200 and list of each pages it crawled, but no data. Tried for loop through responses, but no result
-- company id for Yell seems to be usefull: two ways to obtain it from article:
-as id - this one contains 'ad_fle_' and also can contain long number if company aticle is given any additional advertising properties.
-
-```
-id="ad_FLE_8852306_-"
-```
-or cleaned as this below example, but xpath selector doesn't seem to want to take it
-
-```
-data-natId="8852306"
-```
-
-
 
 #### robots.txt
+
 Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
 
 Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when I try to look up. The same error is being returned for the spider
@@ -138,8 +138,22 @@ Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when 
 ``` 
 
 
-### Saving data
+## 4. Saving data
 
+In settings.py I added various options to save data in different formats.
+
+### csv
+when the code is uncommented, when you runspider the data is saved into companies.csv file
+
+### xlsx
+
+Guidance how to convert csv to xlsx automaticaly using python found [here](https://datatofish.com/csv-to-excel-python/) I installed pandas library and wrote the exact location of the input file and where the new xlsx file needs to be stored. 
+
+VS code doesn't seem to cope with opening xlsx file, I downloaded the file from github and opened it in googlesheets.
+
+### SQLite database
+
+To lookup the content of the *.db file I downloaded the file from github to my computer and used [this page](https://sqliteonline.com/) to open it
 
 ## Off topic
 
