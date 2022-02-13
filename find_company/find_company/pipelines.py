@@ -31,7 +31,7 @@ class FindCompanyPipeline(object):
         return item
 
     def store_db(self, item):
-        self.curr.execute("""INSERT INTO companies_names_tb VALUES (?,?,?)""",(
+        self.curr.execute("""insert into companies_names_tb values (?,?,?)""",(
             item['company_name'],
             item['company_website'],
             item['company_id']
