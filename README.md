@@ -115,8 +115,22 @@ https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&ut
 #### robots.txt
 Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
 
+Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when I try to look up. 
+
 ### Saving data
 
+
+## Off topic
+
+Yell has lots of fun background images for page 404
+
+- [404 error background image](https://www.yell.com/img/errorHero-1.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-2.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-3.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-4.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-5.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-6.jpg)
+- [404 error background image](https://www.yell.com/img/errorHero-7.jpg)
 
 
 
