@@ -90,6 +90,21 @@ https://www.yell.com/biz/corby-tyre-and-exhaust-corby-6915600/
 ```
 
 - company website link, this will require cleaning to get just the domain 'corbytyres':
+this is found in source code
 ```
 <a itemprop="url" rel="nofollow noopener" href="http://www.corbytyres.co.uk" data-tracking="AP:CN:WL:FLE" target="_blank" class="btn btn-big btn-yellow businessCard--callToAction" >
 ```
+link received by using css selector and xpath
+```
+https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&utm_campaign=yell'
+```
+- 
+#### robots.txt
+Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
+
+
+## Special Thanks to:
+
+[SelectorGadget - chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related?hl=en)
+[linkedin course  - WebScrapping with Python](https://www.linkedin.com/feed/update/urn:li:activity:6897559949699088384/)
+[Python Scrapy tutorial at YouTube (full course 25 videos)](https://youtu.be/ve_0h4Y8nuI)
