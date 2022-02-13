@@ -7,6 +7,6 @@ import scrapy
 
 
 class FindCompanyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    company_name = scrapy.Field()
+    company_website = scrapy.Field()
+
