@@ -22,7 +22,7 @@ class YellSpider(CrawlSpider):
     ]
     def parse(self, response):
 
-        company_name = response.xpath('//title/text()').extract_first()
+        company_name = response.xpath('//h2/text()').extract()
         company_website = response.xpath('//a[@itemprop="url"]/@href').extract_first()
      
         yield {
