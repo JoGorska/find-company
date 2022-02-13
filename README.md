@@ -112,6 +112,13 @@ link received by using css selector and xpath
 https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&utm_campaign=yell'
 ```
 
+#### Issues with obtaining data
+- sitemap returning 503 error(more details in [robots.txt](robots.txt))
+- crawling spider can start on the page listing 29 companies and crawl into each company on the list, but doesn't return any data. Gives status 200 and list of each pages it crawled, but no data. Tried for loop through responses, but no result
+
+
+
+
 #### robots.txt
 Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
 
