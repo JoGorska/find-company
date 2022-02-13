@@ -115,7 +115,17 @@ https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&ut
 #### Issues with obtaining data
 - sitemap returning 503 error(more details in [robots.txt](robots.txt))
 - crawling spider can start on the page listing 29 companies and crawl into each company on the list, but doesn't return any data. Gives status 200 and list of each pages it crawled, but no data. Tried for loop through responses, but no result
+- company id for Yell seems to be usefull: two ways to obtain it from article:
+as id - this one contains 'ad_fle_' and also can contain long number if company aticle is given any additional advertising properties.
 
+```
+id="ad_FLE_8852306_-"
+```
+or cleaned as this below example, but xpath selector doesn't seem to want to take it
+
+```
+data-natId="8852306"
+```
 
 
 
