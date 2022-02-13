@@ -1,4 +1,13 @@
 # Company list
+
+## The quest
+
+1. Scrape company details from https://www.cylex-uk.co.uk/
+2. Find those companies on https://uk.trustpilot.com/
+3. Grab the review summary and a handful of reviews
+4. Put them into a database AND an excel file.
+5. Send us the results & the code used to get them
+
 ## 1. Data from Cylex
 Inspected source code on Cylex website. There are two possible places to get company name from:
 - url, where company details are:
@@ -66,14 +75,18 @@ COOKIES_DEBUG = True
 ## 3. Yell as alternative to Cylex
 
 Attempt to reaserch another popular website that would give me a lots of record of companies - Found Yell
-### Example data:
-- example of company that has profile on both trustpilot and Yell: 
+### Extracting data:
 
-Corby Tyre and Exhaust- Yell link [here](https://www.yell.com/biz/corby-tyre-and-exhaust-corby-6915600/)
-Corbytyre - Trustpilot link [here](https://uk.trustpilot.com/review/www.corbytyres.co.uk)
+#### Example data:
+
+Below you will find an example of company that has profile on both trustpilot and Yell: 
+
+- Corby Tyre and Exhaust- Yell link [here](https://www.yell.com/biz/corby-tyre-and-exhaust-corby-6915600/)
+
+- Corbytyre - Trustpilot link [here](https://uk.trustpilot.com/review/www.corbytyres.co.uk)
 
 #### Issues:
-- the names are different - corby tyre and exhaust on Yell, but corbytyres on trustpilot - this might be due this one being unclaimed profile at trustpilot
+- the names are different - "corby tyre and exhaust" on Yell, but "corbytyres" on trustpilot - this might be due this one being unclaimed profile at trustpilot
 - common ground: they both reffer to the same website of the company link [here](www.corbytyres.co.uk)
 - need to be aware that not all companies will have website on both sites
 - I tested that trustpilot allows to reaserch by company name OR partial of the website address. It is worth to harvest both data from Yell to get more hits in Trustpilot
@@ -98,13 +111,21 @@ link received by using css selector and xpath
 ```
 https://www.automotivesolutionscorby.com/?utm_source=yell&utm_medium=referral&utm_campaign=yell'
 ```
-- 
+
 #### robots.txt
 Robots txt contains links to sitemap. Link to robots.txt for Yell can be found [here](https://www.yell.com/robots.txt)
+
+### Saving data
+
+
 
 
 ## Special Thanks to:
 
-[SelectorGadget - chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related?hl=en)
-[linkedin course  - WebScrapping with Python](https://www.linkedin.com/feed/update/urn:li:activity:6897559949699088384/)
-[Python Scrapy tutorial at YouTube (full course 25 videos)](https://youtu.be/ve_0h4Y8nuI)
+- [SelectorGadget - chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related?hl=en)
+
+- [linkedin course  - WebScrapping with Python](https://www.linkedin.com/feed/update/urn:li:activity:6897559949699088384/)
+
+- [Python Scrapy tutorial at YouTube (full course 25 videos)](https://youtu.be/ve_0h4Y8nuI)
+
+- AI Global media for the challenge
