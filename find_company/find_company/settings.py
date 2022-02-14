@@ -12,7 +12,7 @@ BOT_NAME = 'find_company'
 SPIDER_MODULES = ['find_company.spiders']
 NEWSPIDER_MODULE = 'find_company.spiders'
 
-CLOSESPIDER_PAGECOUNT = 10
+CLOSESPIDER_PAGECOUNT = 20
 # FEED_URI  ='companies.json'
 # FEED_FORMAT ='json'
 

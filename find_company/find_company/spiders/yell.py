@@ -27,9 +27,11 @@ class YellSpider(scrapy.Spider):
             item['company_name'] = company_name
             item['company_website'] = company_website
             item['company_id'] = company_id
+            next_page = response.xpath('//nav/div/a[text()[contains(., "Next")]]/@href').get()
+            print(f'FIND NEXT PAGE BUTTON{next_page}')
             yield item
 
-        next_page = response.css('btn.btn-blue.btn-fullWidth.pagination--next.selectorgadget_selecteed::attr(href)').get()
+        next_page = response.xpath('//nav/div/a[text()[contains(., "Next")]]/@href').get()
 
         if next_page is not None:
             yield response.follow(next_page, callback=self.parse)
