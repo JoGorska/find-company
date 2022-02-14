@@ -12,9 +12,18 @@ BOT_NAME = 'find_company'
 SPIDER_MODULES = ['find_company.spiders']
 NEWSPIDER_MODULE = 'find_company.spiders'
 
+CLOSESPIDER_PAGECOUNT = 20
+# FEED_URI  ='companies.json'
+# FEED_FORMAT ='json'
+
+# 'FEED_URI': 'companies.xml',
+# 'FEED_FORMAT': 'xml'
+
+# FEED_URI  ='companies.csv'
+# FEED_FORMAT ='csv'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'find_company (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -25,7 +34,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -44,9 +53,11 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'find_company.middlewares.FindCompanySpiderMiddleware': 543,
-#}
+# SPIDER_MIDDLEWARES = {
+#    'scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy': 543,
+# }
+# interesting???
+REFFERRER_POLICY = 'scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy'
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -62,9 +73,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'find_company.pipelines.FindCompanyPipeline': 300,
-#}
+# higher priority - lower number
+ITEM_PIPELINES = {
+   'find_company.pipelines.FindCompanyPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
