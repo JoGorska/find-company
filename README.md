@@ -183,6 +183,8 @@ Yell has lots of fun background images for page 404
 
 - [SelectorGadget - chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related?hl=en)
 
+- [SQLite online](https://sqliteonline.com/) 
+
 - [linkedin course  - WebScrapping with Python](https://www.linkedin.com/feed/update/urn:li:activity:6897559949699088384/)
 
 - [Python Scrapy tutorial at YouTube (full course 25 videos)](https://youtu.be/ve_0h4Y8nuI)

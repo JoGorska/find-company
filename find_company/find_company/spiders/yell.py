@@ -27,8 +27,6 @@ class YellSpider(scrapy.Spider):
             item['company_name'] = company_name
             item['company_website'] = company_website
             item['company_id'] = company_id
-            next_page = response.xpath('//nav/div/a[text()[contains(., "Next")]]/@href').get()
-            print(f'FIND NEXT PAGE BUTTON{next_page}')
             yield item
 
         next_page = response.xpath('//nav/div/a[text()[contains(., "Next")]]/@href').get()
