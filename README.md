@@ -148,7 +148,47 @@ Robotx.txt contain the list of sitemaps, but the sitemaps return error 503 when 
 ``` 
 
 
-## 4. Saving data
+## 4. Trustpilot
+
+### What data I need:
+
+- company name - This can be taken from the search on Yell
+
+- review summary - number next to the stars - representing some combination of average reviews and other factors as per Trustpilot takes into consideration
+
+```
+<p class="typography_typography__QgicV typography_bodysmall__irytL typography_color-gray-7__9Ut3K typography_weight-regular__TWEnf typography_fontstyle-normal__kHyN3" data-rating-typography="true">3.6</p>
+```
+
+- handful of reviews - each review is in the container:
+
+    one review container: '<section class="styles_reviewContentwrapper__zH_9M">'
+
+    smaller review container for h1 and p only: '<div class="styles_reviewContent__0Q2Tg" aria-hidden="false" data-review-content="true">'
+
+- review header:
+anchor tag with review header text:
+```
+<a href="/reviews/5e88aa23086b6409542fb601" rel="nofollow" target="_self" class="link_internal__7XN06 link_wrapper__5ZJEx styles_linkwrapper__73Tdy">If you are in need of an hones tGarage, look no further.</a>
+```
+
+h2 tag containing anchor tag with the review header text:
+```
+<h2 class="typography_typography__QgicV typography_h4__E971J typography_color-black__5LYEn typography_weight-regular__TWEnf typography_fontstyle-normal__kHyN3 styles_reviewTitle__04VGJ" data-service-review-title-typography="true">
+    <a href="/reviews/5e88aa23086b6409542fb601" rel="nofollow" target="_self" class="link_internal__7XN06 link_wrapper__5ZJEx styles_linkwrapper__73Tdy">If you are in need of an hones tGarage, look no further.
+    </a>
+</h2>
+```
+- the content of the review - description / story
+
+```
+<p class="typography_typography__QgicV typography_body__9UBeQ typography_color-black__5LYEn typography_weight-regular__TWEnf typography_fontstyle-normal__kHyN3" data-service-review-text-typography="true">
+    If you are in need of an honest, reliable and friendly garage, you found it.<br>Booked my car in for the second year for a major service and MOT this time.<br>I was not disappointed.<br>The service was as thorough as can be expected and the MOT flagged up an advisory regarding my tyres.<br>not a big surprise to me, since I did get a lot of use out of them. <br>So, next week the tyres are getting fitted and I get them to check my wheel alignment too, since the front n/s seems to be worn unevenly. the tyres are going to be an absolute bargain. Under £50 per tyre on an HYUNDAI I30.<br>And regarding the video footage.<br>Yes, true. this guys and girls will provide you with the evidence as well, since they are an honest bunch who will not tell you a lot of BS.<br>Will definitely use them again next time.
+</p>
+   
+```
+
+## Saving data
 
 In settings.py I added various options to save data in different formats.
 

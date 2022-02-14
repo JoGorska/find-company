@@ -14,3 +14,20 @@ class FindCompanyItem(scrapy.Item):
     company_website = scrapy.Field()
     company_id = scrapy.Field()
 
+class FindReviewItem(scrapy.Item):
+    '''
+    Item containing data collected 
+    from page sumarising company rating
+    '''
+
+    company_name = scrapy.Field()
+    review_summary = scrapy.Field()
+
+    review_one_header = scrapy.Field()
+    review_one_content = scrapy.Field()
+
+    review_two_header = scrapy.Field()
+    review_two_content = scrapy.Field()
+
+    review_three_header = scrapy.Field()
+    review_three_content = scrapy.Field()
