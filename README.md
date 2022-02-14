@@ -8,6 +8,16 @@
 4. Put them into a database AND an excel file.
 5. Send us the results & the code used to get them
 
+## Initial set up
+
+I used virtual enviroment that I got built in the gitpod, virtual enviroment or other product can be used. 
+
+Please please install requirements.txt for the program to work correctly
+
+```
+pip install -r requirements.txt
+```
+
 ## 1. Data from Cylex
 Inspected source code on Cylex website. There are two possible places to get company name from:
 - url, where company details are:
